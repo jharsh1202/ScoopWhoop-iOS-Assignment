@@ -12,15 +12,15 @@ class API {
     
     //mark Retrieve All Shows
     
-    func getAllShows (from url : String, collectionView: UICollectionView ) -> [FakeShow] {
-        var showsData = [FakeShow]()
+    func getAllShows (from url : String, collectionView: UICollectionView ) -> [Show] {
+        var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
-            var result: Shows?
+            var result: ShowsResponse?
             guard let data=data, error == nil else {
                 return
             }
             do {
-                try result = JSONDecoder().decode(Shows.self, from: data)
+                try result = JSONDecoder().decode(ShowsResponse.self, from: data)
             } catch {
                 print("didnt't work out to convert json to your structure")
             }
@@ -28,15 +28,15 @@ class API {
                 for mshow in showData {
                     let imageURL = mshow.topicFeatureImg
                     let showName = mshow.topicName
-                    let show = FakeShow(name: showName, imageURL: imageURL)
+                    let show = Show(name: showName, imageURL: imageURL)
                     showsData.append(show)
                 }
             }
+            print(showsData)
             DispatchQueue.main.async {
-                fakeShows = API().getAllShows(from: url, collectionView: collectionView)
+                shows = showsData
                 collectionView.reloadData()
             }
-            
         }.resume()
         return showsData
     }

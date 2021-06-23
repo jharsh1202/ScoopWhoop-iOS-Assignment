@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct FakeShow {
+struct Show {
     var name: String
     var imageURL: String
 }
 
-var fakeShows=[FakeShow]()
+var shows=[Show]()
 //let fakeShows:[FakeShow] = [
 //    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
 //    FakeShow(name: "as1", image: #imageLiteral(resourceName: "dp")),
@@ -38,9 +38,9 @@ var fakeShows=[FakeShow]()
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 // MARK: - Welcome
-struct Shows: Codable {
+struct ShowsResponse: Codable {
     let status, nextOffset, totalShows: Int
-    let data: [Show]
+    let data: [ShowResponse]
     let err: String
 
     enum CodingKeys: String, CodingKey {
@@ -52,7 +52,7 @@ struct Shows: Codable {
 }
 
 // MARK: - Show
-struct Show: Codable {
+struct ShowResponse: Codable {
 //    let featureImgPort: String
     let topicName: String
     let topicFeatureImg: String
