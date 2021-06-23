@@ -5,30 +5,55 @@
 //  Created by Harshit Jain on 23/06/21.
 //
 
-import Foundation
+import UIKit
 
 class API {
-    func getData (from url : String)  {
-        print("retriving Data ")
+    
+    
+    //mark Retrieve All Shows
+    
+    func getAllShows (from url : String, collectionView: UICollectionView ) -> [FakeShow] {
+        var showsData = [FakeShow]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            var result: Shows?
             guard let data=data, error == nil else {
                 return
             }
-            var result: Response?
             do {
-                try result = JSONDecoder().decode(Response.self, from: data)
+                try result = JSONDecoder().decode(Shows.self, from: data)
             } catch {
                 print("didnt't work out to convert json to your structure")
             }
-            
-            guard let jsonData = result else {
-                return
+            if let showData = result?.data {
+                for mshow in showData {
+                    let imageURL = mshow.topicFeatureImg
+                    let showName = mshow.topicName
+                    let show = FakeShow(name: showName, imageURL: imageURL)
+                    showsData.append(show)
+                }
+            }
+            DispatchQueue.main.async {
+                fakeShows = API().getAllShows(from: url, collectionView: collectionView)
+                collectionView.reloadData()
             }
             
-            print(jsonData.status)
-            print(jsonData.data)
-            
         }.resume()
-
+        return showsData
     }
+    
+    // Retrieve images
+    func getImage (from url : String) -> UIImage {
+        var image = #imageLiteral(resourceName: "Image")
+            URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+    
+            guard let data=data, error == nil else {
+                return
+            }
+            if let imageData = UIImage(data: data) {
+                image = imageData
+            }
+        }.resume()
+        return image
+    }
+    
 }
