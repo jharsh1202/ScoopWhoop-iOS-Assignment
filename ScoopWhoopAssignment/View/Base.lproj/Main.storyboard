@@ -12,7 +12,7 @@
         <!--Top Shows-->
         <scene sceneID="RCY-38-BWw">
             <objects>
-                <collectionViewController storyboardIdentifier="ShowsListCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Yu-3i-owd" customClass="ShowsListCollectionViewController" customModule="ScoopWhoopAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ShowsListCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Yu-3i-owd" customClass="ShowsCollectionViewController" customModule="ScoopWhoopAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="I4N-9x-MZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
