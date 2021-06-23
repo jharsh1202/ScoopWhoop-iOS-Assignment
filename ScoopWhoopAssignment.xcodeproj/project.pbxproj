@@ -62,14 +62,16 @@
 		4E0049A526820CB4004F1639 /* ScoopWhoopAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				4E8A9A01268320AB009BEE3D /* Networking */,
+				4E0049B126820CB5004F1639 /* LaunchScreen.storyboard */,
+				4E0049AC26820CB4004F1639 /* Main.storyboard */,
 				4E0049A626820CB4004F1639 /* AppDelegate.swift */,
 				4E0049A826820CB4004F1639 /* SceneDelegate.swift */,
+				4E8A9A01268320AB009BEE3D /* Networking */,
 				4EBD107C26823C52006B29D2 /* Controller */,
 				4EBD107D26823C5A006B29D2 /* View */,
+				4E8A9A002683200E009BEE3D /* Model */,
 				4E0049AF26820CB5004F1639 /* Assets.xcassets */,
 				4E0049B426820CB5004F1639 /* Info.plist */,
-				4E8A9A002683200E009BEE3D /* Model */,
 			);
 			path = ScoopWhoopAssignment;
 			sourceTree = "<group>";
@@ -102,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				4EBD107E26823CCF006B29D2 /* ShowCollectionViewCell.swift */,
-				4E0049B126820CB5004F1639 /* LaunchScreen.storyboard */,
-				4E0049AC26820CB4004F1639 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
