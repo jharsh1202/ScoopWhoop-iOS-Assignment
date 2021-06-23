@@ -12,6 +12,35 @@ class ShowsListCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let url = "https://stagingsw.scoopwhoop.com/uns/api/v1/all_shows/"
+        
+        getData(from: url)
+        func getData (from url : String)  {
+            print("retriving Data ")
+            URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+                guard let data=data, error == nil else {
+                    return
+                }
+                var result: Response?
+                do {
+                    try result = JSONDecoder().decode(Response.self, from: data)
+                } catch {
+                    print("didnt't work out to convert json to your structure")
+                }
+                
+                guard let jsonData = result else {
+                    return
+                }
+                
+                print(jsonData.status)
+                
+                print(jsonData.data)
+                
+                
+            }.resume()
+           
+
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
