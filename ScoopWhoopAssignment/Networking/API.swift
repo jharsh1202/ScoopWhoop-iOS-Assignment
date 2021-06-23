@@ -26,7 +26,7 @@ class API {
             }
             if let showData = result?.data {
                 for mshow in showData {
-                    let imageURL = mshow.topicFeatureImg
+                    let imageURL = mshow.featureImgPort
                     let showName = mshow.topicName
                     let show = Show(name: showName, imageURL: imageURL)
                     showsData.append(show)
@@ -42,8 +42,8 @@ class API {
     }
     
     // Retrieve images
-    func getImage (from url : String) -> UIImage {
-        var image = #imageLiteral(resourceName: "Image")
+    func getImage (from url : String, view: Any?) -> UIImage {
+        var image:UIImage = #imageLiteral(resourceName: "Image")
             URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
     
             guard let data=data, error == nil else {
@@ -52,6 +52,12 @@ class API {
             if let imageData = UIImage(data: data) {
                 image = imageData
             }
+//                
+//            DispatchQueue.main.async {
+//                shows = showsData
+//                view.reloadData()
+//            }
+
         }.resume()
         return image
     }

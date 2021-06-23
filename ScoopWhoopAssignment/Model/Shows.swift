@@ -53,9 +53,9 @@ struct ShowsResponse: Codable {
 
 // MARK: - Show
 struct ShowResponse: Codable {
-//    let featureImgPort: String
+    let featureImgPort: String
     let topicName: String
-    let topicFeatureImg: String
+//    let topicFeatureImg: String
 //    let topicFeatureVideo: String
 //    let modifiedDate: String
 //    let propertyTags: [PropertyTag]
@@ -72,9 +72,9 @@ struct ShowResponse: Codable {
 //    let topicDesc, topicSlug, createdDate, id: String
 //
     enum CodingKeys: String, CodingKey {
-//        case featureImgPort = "feature_img_port"
+        case featureImgPort = "feature_img_port"
         case topicName = "topic_name"
-        case topicFeatureImg = "topic_feature_img"
+//        case topicFeatureImg = "topic_feature_img"
 //        case topicFeatureVideo = "topic_feature_video"
 //        case modifiedDate = "modified_date"
 //        case propertyTags = "property_tags"
