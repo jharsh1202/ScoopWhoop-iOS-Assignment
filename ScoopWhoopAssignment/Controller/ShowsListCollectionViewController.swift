@@ -49,9 +49,9 @@ class ShowsListCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowCell", for: indexPath) as! ShowCollectionViewCell
-        cell.createShow(name: shows[indexPath.row].name, image: shows[indexPath.row].image)
+        cell.showLabel.text = shows[indexPath.row].name
+        cell.showImage.image = shows[indexPath.row].image
         return cell
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
