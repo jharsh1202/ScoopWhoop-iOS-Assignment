@@ -8,12 +8,14 @@
 import UIKit
 
 
-var shows=[Show]()
+
 class ShowsCollectionViewController: UICollectionViewController {
 
+    var shows=[Show]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.getAllShows(from: K.URL_ALL_SHOWS, collectionView: collectionView)
+        fetchAllShows(from: K.URL_ALL_SHOWS)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,6 +32,17 @@ class ShowsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showDetailURL = K.URL_SHOW_VIDEOS_LISTING + shows[indexPath.row].nameSlug
+    }
+    
+    func fetchAllShows(from url: String ) -> Void {
+        API.getAllShows(from: url, completion: reloadUI)
+    }
+    
+    func reloadUI(shows: [Show]) -> Void {
+        self.shows = shows
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 }
 

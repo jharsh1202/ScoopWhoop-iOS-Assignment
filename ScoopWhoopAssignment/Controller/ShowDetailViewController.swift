@@ -8,9 +8,10 @@
 import UIKit
 
 var showDetailURL = ""
-var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
 
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -21,7 +22,7 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        API.getShowDetails(from: showDetailURL, collectionView: collectionView, imageView: imageView, descriptionTextView: descriptionTextView, viewController: self, titleLabel: titleLabel)
+        API.getShowDetails(from: showDetailURL, completion: reloadUI)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,6 +37,17 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.videoLabel.text = showDetail.titles[indexPath.row]
         cell.videoImageView.downloaded(from: showDetail.thumbnails[indexPath.row])
         return cell
+    }
+    
+    func reloadUI(showDetail: ShowDetail) -> Void {
+        self.showDetail = showDetail
+        DispatchQueue.main.async {
+            self.imageView.downloaded(from: showDetail.featureImageLand)
+            self.descriptionTextView.text = showDetail.desc
+            self.title = showDetail.name
+            self.titleLabel.text = showDetail.name
+            self.collectionView.reloadData()
+        }
     }
     
 }

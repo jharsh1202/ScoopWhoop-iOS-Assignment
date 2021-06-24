@@ -10,7 +10,7 @@ import UIKit
 class API {
     
     // MARK: - Retrieve All Shows
-    static func getAllShows (from url : String, collectionView: UICollectionView) {
+    static func getAllShows (from url : String, completion: @escaping ([Show]) -> Void) {
         var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowsResponse?
@@ -30,16 +30,14 @@ class API {
                     let show = Show(name: showName, showimageURL: showimageURL, nameSlug: showSlug)
                     showsData.append(show)
                 }
-            }
-            DispatchQueue.main.async {
-                shows = showsData
-                collectionView.reloadData()
+                completion(showsData)
             }
         }.resume()
     }
     
     // MARK: - Retrieve Show Details
-    static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController, titleLabel: UILabel  ) {
+    static func getShowDetails (from url : String, completion: @escaping (ShowDetail) -> Void) {
+        var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowDetailResponse?
             guard let data=data, error == nil else {
@@ -62,13 +60,7 @@ class API {
                     showDetail.thumbnails.append(relatedVideo.featureImg)
                     showDetail.titles.append(relatedVideo.title)
                 }
-            }
-            DispatchQueue.main.async {
-                imageView.downloaded(from: showDetail.featureImageLand)
-                descriptionTextView.text = showDetail.desc
-                viewController.title = showDetail.name
-                titleLabel.text = showDetail.name
-                collectionView.reloadData()
+                completion(showDetail)
             }
         }.resume()
     }
