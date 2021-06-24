@@ -9,7 +9,6 @@ import UIKit
 
 class API {
     
-    
     //mark Retrieve All Shows
     static func getAllShows (from url : String, collectionView: UICollectionView ) {//-> [Show] {
         var showsData = [Show]()
@@ -41,7 +40,7 @@ class API {
     
     
     // Retrieve Show Details
-    static func getShowDetails (from url : String, collectionView: UICollectionView ) {//}-> ShowDetail {
+    static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController ) {
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowDetailResponse?
             guard let data=data, error == nil else {
@@ -66,17 +65,19 @@ class API {
                 }
             }
             DispatchQueue.main.async {
+                imageView.downloaded(from: showDetail.featureImageLand)
+                descriptionTextView.text = showDetail.desc
+                viewController.title = showDetail.name
                 collectionView.reloadData()
             }
         }.resume()
-        //return showDetail
     }
 }
 
 
 
 extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -90,7 +91,7 @@ extension UIImageView {
             }
         }.resume()
     }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }

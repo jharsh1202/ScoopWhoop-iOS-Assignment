@@ -15,13 +15,9 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = #imageLiteral(resourceName: "Image")
         collectionView.dataSource = self
         collectionView.delegate = self
-        API.getShowDetails(from: showDetailURL, collectionView: collectionView)
-//        self.title = showDetail.name //get on time
-//        descriptionTextView.text = showDetail.desc //get on time
-//        imageView.image = showDetail.featureImageLand // get IMage from URL
+        API.getShowDetails(from: showDetailURL, collectionView: collectionView, imageView: imageView, descriptionTextView: descriptionTextView, viewController: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,3 +41,4 @@ extension ShowDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: self.view.frame.width/2 - 5, height: 300)
     }
 }
+
