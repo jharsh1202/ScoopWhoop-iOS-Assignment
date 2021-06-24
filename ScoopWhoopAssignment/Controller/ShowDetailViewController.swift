@@ -7,10 +7,9 @@
 
 import UIKit
 
-var showDetailURL = ""
-
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var showDetailURL: String?
     var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,16 +21,16 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        API.getShowDetails(from: showDetailURL, completion: reloadUI)
+        if let showDetailURL = showDetailURL {
+            API.getShowDetails(from: showDetailURL, completion: reloadUI)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Count")
         return showDetail.titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("buildingCELL")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RelatedVideoCollectionViewCell
         cell.videoLabel.preferredMaxLayoutWidth = self.view.frame.width/2 - 15
         cell.videoLabel.text = showDetail.titles[indexPath.row]

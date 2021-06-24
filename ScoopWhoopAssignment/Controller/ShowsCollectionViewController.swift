@@ -7,11 +7,10 @@
 
 import UIKit
 
-
-
 class ShowsCollectionViewController: UICollectionViewController {
 
-    var shows=[Show]()
+    var shows = [Show]()
+    var showDetailURL: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +31,12 @@ class ShowsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showDetailURL = K.URL_SHOW_VIDEOS_LISTING + shows[indexPath.row].nameSlug
+        performSegue(withIdentifier: "showDetailView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! ShowDetailViewController
+        destVC.showDetailURL = showDetailURL
     }
     
     func fetchAllShows(from url: String ) -> Void {

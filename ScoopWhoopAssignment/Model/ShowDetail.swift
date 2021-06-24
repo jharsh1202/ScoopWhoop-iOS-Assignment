@@ -1,5 +1,5 @@
 //
-//  ShowRelatedVideos.swift
+//  ShowDetail.swift
 //  ScoopWhoopAssignment
 //
 //  Created by Harshit Jain on 24/06/21.
