@@ -8,37 +8,27 @@
 import UIKit
 
 struct Show {
+    
+    internal init(name: String, imageURL: String) {
+        self.name = name
+        self.imageURL = imageURL
+    }
+
     var name: String
     var imageURL: String
+    var nameSlug: String?
+    var topicDesc: String?
 }
 
 var shows=[Show]()
-//let fakeShows:[FakeShow] = [
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as1", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as2", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as3", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as4", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as5", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as6", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as7", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as8", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//    FakeShow(name: "as", image: #imageLiteral(resourceName: "dp")),
-//]
-//
+
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 // MARK: - Welcome
-struct ShowsResponse: Codable {
+struct ShowsResponse: Decodable {
     let status, nextOffset, totalShows: Int
     let data: [ShowResponse]
     let err: String
@@ -52,9 +42,11 @@ struct ShowsResponse: Codable {
 }
 
 // MARK: - Show
-struct ShowResponse: Codable {
+struct ShowResponse: Decodable {
     let featureImgPort: String
     let topicName: String
+    let topicSlug: String
+    let topicDesc: String
 //    let topicFeatureImg: String
 //    let topicFeatureVideo: String
 //    let modifiedDate: String
@@ -69,11 +61,14 @@ struct ShowResponse: Codable {
 //    let totalVideos, flag: Int
 //    let redisID: String
 //    let topicType: [String]
-//    let topicDesc, topicSlug, createdDate, id: String
+//    let createdDate, id: String
 //
     enum CodingKeys: String, CodingKey {
         case featureImgPort = "feature_img_port"
         case topicName = "topic_name"
+        case topicSlug = "topic_slug"
+        case topicDesc = "topic_desc"
+
 //        case topicFeatureImg = "topic_feature_img"
 //        case topicFeatureVideo = "topic_feature_video"
 //        case modifiedDate = "modified_date"
@@ -89,8 +84,6 @@ struct ShowResponse: Codable {
 //        case flag
 //        case redisID = "redis_id"
 //        case topicType = "topic_type"
-//        case topicDesc = "topic_desc"
-//        case topicSlug = "topic_slug"
 //        case createdDate = "created_date"
 //        case id = "_id"
     }

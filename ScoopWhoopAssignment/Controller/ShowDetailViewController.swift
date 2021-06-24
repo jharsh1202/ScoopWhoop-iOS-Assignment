@@ -8,7 +8,8 @@
 import UIKit
 
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,11 +22,11 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Count")
-        return 3
+        return 13
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("buildingCELl")
+        print("buildingCELL")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RelatedVideoCollectionViewCell
         cell.videoLabel.text = "asfd"
         cell.videoImageView.image = #imageLiteral(resourceName: "Image")

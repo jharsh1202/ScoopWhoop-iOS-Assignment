@@ -11,7 +11,7 @@ class API {
     
     
     //mark Retrieve All Shows
-    func getAllShows (from url : String, collectionView: UICollectionView ) -> [Show] {
+    static func getAllShows (from url : String, collectionView: UICollectionView ) -> [Show] {
         var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowsResponse?
