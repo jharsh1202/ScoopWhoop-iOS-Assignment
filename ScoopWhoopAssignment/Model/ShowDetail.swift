@@ -109,14 +109,14 @@ struct NewTag: Codable {
 struct ShowData: Codable {
     let topic: String
     let featureImgPort, topicFeatureImg, featureImgLand: String
-    let topicDisplay: TopicDisplay
+    //let topicDisplay: TopicDisplay
 
     enum CodingKeys: String, CodingKey {
         case topic
         case featureImgPort = "feature_img_port"
         case topicFeatureImg = "topic_feature_img"
         case featureImgLand = "feature_img_land"
-        case topicDisplay = "topic_display"
+        //case topicDisplay = "topic_display"
     }
 }
 
@@ -137,23 +137,24 @@ struct TopicDisplay: Codable {
 
 // MARK: - ShowDetails
 struct ShowDetails: Codable {
-    let featureImgPort: String
+    //let featureImgPort: String
     let topicName: String
     let totalVideos: Int
     let topicDesc: String
     let topicSlug: String
-    let featureImgLand, onexoneImg: String
-    let channel: Channel
+    let featureImgLand: String
+    //let onexoneImg: String
+    //let channel: Channel
 
     enum CodingKeys: String, CodingKey {
-        case featureImgPort = "feature_img_port"
+        //case featureImgPort = "feature_img_port"
         case topicName = "topic_name"
         case totalVideos = "total_videos"
         case topicDesc = "topic_desc"
         case topicSlug = "topic_slug"
         case featureImgLand = "feature_img_land"
-        case onexoneImg = "onexone_img"
-        case channel
+        //case onexoneImg = "onexone_img"
+        //case channel
     }
 }
 

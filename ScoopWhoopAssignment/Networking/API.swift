@@ -38,7 +38,6 @@ class API {
         }.resume()
     }
     
-    
     // MARK: - Retrieve Show Details
     static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController, titleLabel: UILabel  ) {
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -90,6 +89,7 @@ extension UIImageView {
             }
         }.resume()
     }
+    
     func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
