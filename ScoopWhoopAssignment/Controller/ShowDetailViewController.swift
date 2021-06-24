@@ -18,16 +18,20 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         imageView.image = #imageLiteral(resourceName: "Image")
         collectionView.dataSource = self
         collectionView.delegate = self
+        showDetail = API.getShowDetails(from: showDetailURL, collectionView: collectionView)
+        //descriptionTextView.text = showDetail.desc //get on time
+        //imageView.image = showDetail.featureImageLand // get IMage from URL
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Count")
-        return 13
+        return showDetail.titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("buildingCELL")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RelatedVideoCollectionViewCell
+        //cell.videoLabel.text = showDetail.titles[indexPath.row]
         cell.videoLabel.text = "asfd"
         cell.videoImageView.image = #imageLiteral(resourceName: "Image")
         return cell

@@ -37,7 +37,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ6-O7-oBz">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ6-O7-oBz">
                                             <rect key="frame" x="15" y="186" width="41" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +47,7 @@
                                     <constraints>
                                         <constraint firstItem="KQ6-O7-oBz" firstAttribute="leading" secondItem="OiN-jR-eun" secondAttribute="leading" constant="15" id="SMT-Y8-0bA"/>
                                         <constraint firstAttribute="bottom" secondItem="KQ6-O7-oBz" secondAttribute="bottom" constant="8" id="eNe-UD-Arr"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KQ6-O7-oBz" secondAttribute="trailing" constant="20" symbolic="YES" id="x4H-Ub-esU"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -75,8 +76,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otG-hM-jfN">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otG-hM-jfN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="nWy-nJ-Ce1"/>
                                 </constraints>
@@ -113,6 +114,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="aUZ-ih-HQh" firstAttribute="leading" secondItem="6g2-6o-kaN" secondAttribute="leading" constant="8" id="dqN-Z8-vSf"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aUZ-ih-HQh" secondAttribute="trailing" constant="20" symbolic="YES" id="e3u-Lv-E8o"/>
                                                 <constraint firstAttribute="bottom" secondItem="aUZ-ih-HQh" secondAttribute="bottom" constant="8" id="oNc-yT-Nd1"/>
                                             </constraints>
                                         </collectionViewCellContentView>

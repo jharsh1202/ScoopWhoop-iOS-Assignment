@@ -11,7 +11,7 @@ class API {
     
     
     //mark Retrieve All Shows
-    static func getAllShows (from url : String, collectionView: UICollectionView ) -> [Show] {
+    static func getAllShows (from url : String, collectionView: UICollectionView ) {//-> [Show] {
         var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowsResponse?
@@ -25,9 +25,10 @@ class API {
             }
             if let showData = result?.data {
                 for mshow in showData {
-                    let imageURL = mshow.featureImgPort
+                    let showimageURL = mshow.featureImgPort
                     let showName = mshow.topicName
-                    let show = Show(name: showName, imageURL: imageURL)
+                    let showSlug = mshow.topicSlug
+                    let show = Show(name: showName, showimageURL: showimageURL, nameSlug: showSlug)
                     showsData.append(show)
                 }
             }
@@ -36,7 +37,43 @@ class API {
                 collectionView.reloadData()
             }
         }.resume()
-        return showsData
+        //return showsData
+    }
+    
+    
+    // Retrieve Show Details
+    static func getShowDetails (from url : String, collectionView: UICollectionView ) -> ShowDetail {
+//        var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
+        URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            var result: ShowDetailResponse?
+            guard let data=data, error == nil else {
+                return
+            }
+            do {
+                try result = JSONDecoder().decode(ShowDetailResponse.self, from: data)
+            } catch {
+                print("didnt't work out to convert json to your structure")
+            }
+            if let showDetailData = result?.showDetails {
+                showDetail.name = showDetailData.topicName
+                showDetail.featureImageLand = showDetailData.featureImgLand
+                showDetail.desc = showDetailData.topicDesc
+            }
+            if let showDetailData = result?.data {
+                showDetail.thumbnails.removeAll()
+                showDetail.titles.removeAll()
+                for relatedVideo in showDetailData {
+                    showDetail.thumbnails.append(relatedVideo.featureImg)
+                    showDetail.titles.append(relatedVideo.title)
+                }
+            }
+            DispatchQueue.main.async {
+                //showDetail = showDetail
+                print(showDetail)
+                collectionView.reloadData()
+            }
+        }.resume()
+        return showDetail
     }
 }
 

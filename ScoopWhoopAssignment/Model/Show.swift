@@ -9,14 +9,15 @@ import UIKit
 
 struct Show {
     
-    internal init(name: String, imageURL: String) {
+    internal init(name: String, showimageURL: String, nameSlug: String) {
         self.name = name
-        self.imageURL = imageURL
+        self.showimageURL = showimageURL
+        self.nameSlug = nameSlug
     }
 
     var name: String
-    var imageURL: String
-    var nameSlug: String?
+    var showimageURL: String
+    var nameSlug: String
     var topicDesc: String?
 }
 

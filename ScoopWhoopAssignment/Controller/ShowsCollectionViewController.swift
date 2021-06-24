@@ -12,7 +12,8 @@ class ShowsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        shows = API.getAllShows(from: K.URL_ALL_SHOWS, collectionView: collectionView)
+        //shows =
+        API.getAllShows(from: K.URL_ALL_SHOWS, collectionView: collectionView)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,12 +26,13 @@ class ShowsCollectionViewController: UICollectionViewController {
 //        cell.showLabel.text = "asgf"
 //        cell.showImage.image = #imageLiteral(resourceName: "Image")
         cell.showLabel.text = shows[indexPath.row].name
-        cell.showImage.downloaded(from: shows[indexPath.row].imageURL)
+        cell.showImage.downloaded(from: shows[indexPath.row].showimageURL)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //get what was selected and get the data accordingly
+        showDetailURL = K.URL_SHOW_VIDEOS_LISTING + shows[indexPath.row].nameSlug
         
     }
 }
