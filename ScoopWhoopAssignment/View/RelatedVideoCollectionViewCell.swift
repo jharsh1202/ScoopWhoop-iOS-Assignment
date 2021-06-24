@@ -11,4 +11,3 @@ class RelatedVideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoLabel: UILabel!
     @IBOutlet weak var videoImageView: UIImageView!
 }
-

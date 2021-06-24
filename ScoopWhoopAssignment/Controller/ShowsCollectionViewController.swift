@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+var shows=[Show]()
 class ShowsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
@@ -27,9 +29,7 @@ class ShowsCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //get what was selected and get the data accordingly
         showDetailURL = K.URL_SHOW_VIDEOS_LISTING + shows[indexPath.row].nameSlug
-        
     }
 }
 

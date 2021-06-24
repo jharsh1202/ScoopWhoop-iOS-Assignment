@@ -82,7 +82,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TLc-Fk-2hn">
-                                <rect key="frame" x="0.0" y="548" width="414" height="348"/>
+                                <rect key="frame" x="0.0" y="492" width="414" height="404"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IVj-6F-BBE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -122,10 +122,10 @@
                                 </cells>
                             </collectionView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWT-AG-uML">
-                                <rect key="frame" x="0.0" y="412" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="404" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="d58-PW-98G"/>
+                                    <constraint firstAttribute="height" constant="80" id="d58-PW-98G"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +133,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V76-mx-Bq9">
-                                <rect key="frame" x="0.0" y="376" width="414" height="28"/>
+                                <rect key="frame" x="8" y="376" width="414" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="TkE-EQ-Fsd"/>
                                 </constraints>
@@ -146,18 +146,18 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="otG-hM-jfN" firstAttribute="top" secondItem="ums-TB-RIJ" secondAttribute="top" id="0Dx-0Y-Xbo"/>
-                            <constraint firstItem="V76-mx-Bq9" firstAttribute="trailing" secondItem="ums-TB-RIJ" secondAttribute="trailing" id="0fs-o2-JD1"/>
+                            <constraint firstItem="V76-mx-Bq9" firstAttribute="trailing" secondItem="ums-TB-RIJ" secondAttribute="trailing" constant="8" id="0fs-o2-JD1"/>
                             <constraint firstAttribute="bottom" secondItem="TLc-Fk-2hn" secondAttribute="bottom" id="52D-jY-8k3"/>
                             <constraint firstItem="FWT-AG-uML" firstAttribute="trailing" secondItem="ums-TB-RIJ" secondAttribute="trailing" id="7cz-FK-Bka"/>
                             <constraint firstItem="TLc-Fk-2hn" firstAttribute="leading" secondItem="ums-TB-RIJ" secondAttribute="leading" id="H3Y-bU-kal"/>
                             <constraint firstItem="FWT-AG-uML" firstAttribute="leading" secondItem="ums-TB-RIJ" secondAttribute="leading" id="HJu-M8-1fe"/>
                             <constraint firstItem="TLc-Fk-2hn" firstAttribute="top" secondItem="FWT-AG-uML" secondAttribute="bottom" constant="8" id="L4A-kB-k01"/>
-                            <constraint firstItem="V76-mx-Bq9" firstAttribute="leading" secondItem="ums-TB-RIJ" secondAttribute="leading" id="MI9-uH-AqE"/>
+                            <constraint firstItem="V76-mx-Bq9" firstAttribute="leading" secondItem="ums-TB-RIJ" secondAttribute="leading" constant="8" id="MI9-uH-AqE"/>
                             <constraint firstItem="otG-hM-jfN" firstAttribute="leading" secondItem="ums-TB-RIJ" secondAttribute="leading" id="cto-lG-daK"/>
                             <constraint firstItem="V76-mx-Bq9" firstAttribute="top" secondItem="otG-hM-jfN" secondAttribute="bottom" constant="8" id="jCH-Dh-EPR"/>
                             <constraint firstItem="otG-hM-jfN" firstAttribute="trailing" secondItem="ums-TB-RIJ" secondAttribute="trailing" id="oaM-FQ-Nvy"/>
                             <constraint firstItem="TLc-Fk-2hn" firstAttribute="trailing" secondItem="ums-TB-RIJ" secondAttribute="trailing" id="of0-Ox-2J9"/>
-                            <constraint firstItem="FWT-AG-uML" firstAttribute="top" secondItem="V76-mx-Bq9" secondAttribute="bottom" constant="8" id="ujE-gM-f6f"/>
+                            <constraint firstItem="FWT-AG-uML" firstAttribute="top" secondItem="V76-mx-Bq9" secondAttribute="bottom" id="ujE-gM-f6f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fo1-2T-5rF"/>

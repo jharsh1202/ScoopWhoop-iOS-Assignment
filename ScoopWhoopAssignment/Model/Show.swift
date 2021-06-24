@@ -21,14 +21,13 @@ struct Show {
     var topicDesc: String?
 }
 
-var shows=[Show]()
 
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
-// MARK: - Welcome
+// MARK: - ShowsResponse
 struct ShowsResponse: Decodable {
     let status, nextOffset, totalShows: Int
     let data: [ShowResponse]
@@ -42,7 +41,7 @@ struct ShowsResponse: Decodable {
     }
 }
 
-// MARK: - Show
+// MARK: - ShowResponse
 struct ShowResponse: Decodable {
     let featureImgPort: String
     let topicName: String

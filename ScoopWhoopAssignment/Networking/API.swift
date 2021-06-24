@@ -9,7 +9,7 @@ import UIKit
 
 class API {
     
-    //mark Retrieve All Shows
+    // MARK: - Retrieve All Shows
     static func getAllShows (from url : String, collectionView: UICollectionView) {
         var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -39,7 +39,7 @@ class API {
     }
     
     
-    // Retrieve Show Details
+    // MARK: - Retrieve Show Details
     static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController, titleLabel: UILabel  ) {
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowDetailResponse?
@@ -74,8 +74,6 @@ class API {
         }.resume()
     }
 }
-
-
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill) {
