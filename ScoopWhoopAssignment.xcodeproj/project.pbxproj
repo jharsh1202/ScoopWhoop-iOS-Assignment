@@ -17,6 +17,8 @@
 		4EBD107F26823CCF006B29D2 /* ShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD107E26823CCF006B29D2 /* ShowCollectionViewCell.swift */; };
 		4EBD108126823CE6006B29D2 /* ShowsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD108026823CE6006B29D2 /* ShowsCollectionViewController.swift */; };
 		4EBD108326823EC7006B29D2 /* Shows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD108226823EC7006B29D2 /* Shows.swift */; };
+		4ED371C5268385B3003EA20D /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED371C4268385B3003EA20D /* ShowDetailViewController.swift */; };
+		4ED371CB268441A9003EA20D /* RelatedVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED371CA268441A9003EA20D /* RelatedVideoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		4EBD107E26823CCF006B29D2 /* ShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCollectionViewCell.swift; sourceTree = "<group>"; };
 		4EBD108026823CE6006B29D2 /* ShowsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewController.swift; sourceTree = "<group>"; };
 		4EBD108226823EC7006B29D2 /* Shows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shows.swift; sourceTree = "<group>"; };
+		4ED371C4268385B3003EA20D /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		4ED371CA268441A9003EA20D /* RelatedVideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBD108026823CE6006B29D2 /* ShowsCollectionViewController.swift */,
+				4ED371C4268385B3003EA20D /* ShowDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBD107E26823CCF006B29D2 /* ShowCollectionViewCell.swift */,
+				4ED371CA268441A9003EA20D /* RelatedVideoCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,7 +191,9 @@
 				4E0049A726820CB4004F1639 /* AppDelegate.swift in Sources */,
 				4E0049A926820CB4004F1639 /* SceneDelegate.swift in Sources */,
 				4EBD107F26823CCF006B29D2 /* ShowCollectionViewCell.swift in Sources */,
+				4ED371C5268385B3003EA20D /* ShowDetailViewController.swift in Sources */,
 				4EB769C52683329500D27DA6 /* Constants.swift in Sources */,
+				4ED371CB268441A9003EA20D /* RelatedVideoCollectionViewCell.swift in Sources */,
 				4E8A9A03268320FE009BEE3D /* API.swift in Sources */,
 				4EBD108126823CE6006B29D2 /* ShowsCollectionViewController.swift in Sources */,
 			);
