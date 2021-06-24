@@ -8,6 +8,16 @@
 import Foundation
 
 struct ShowDetail {
+    init() {
+        self.name = ""
+        self.featureImageLand = ""
+        self.featureImg = ""
+        self.titles = [String]()
+        self.thumbnails = [String]()
+        self.desc = ""
+        self.nextOffset = 10
+    }
+    
   
     var name: String
     var featureImageLand: String
@@ -15,6 +25,7 @@ struct ShowDetail {
     var titles: [String]
     var thumbnails: [String]
     var desc: String
+    var nextOffset: Int
 }
 
 // MARK: - ShowDetailResponse
@@ -46,20 +57,6 @@ struct ShowDetailData: Codable {
     }
 }
 
-enum AspectRatio: String, Codable {
-    case the169 = "16:9"
-}
-
-// MARK: - Genre
-struct Genre: Codable {
-    let genreTitle, genreSlug: String
-
-    enum CodingKeys: String, CodingKey {
-        case genreTitle = "genre_title"
-        case genreSlug = "genre_slug"
-    }
-}
-
 // MARK: - NewTag
 struct NewTag: Codable {
     let id: String
@@ -83,7 +80,6 @@ struct ShowData: Codable {
         case featureImgPort = "feature_img_port"
         case topicFeatureImg = "topic_feature_img"
         case featureImgLand = "feature_img_land"
-        //case topicDisplay = "topic_display"
     }
 }
 

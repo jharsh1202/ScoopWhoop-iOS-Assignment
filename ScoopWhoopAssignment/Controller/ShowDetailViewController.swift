@@ -10,8 +10,8 @@ import UIKit
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var showDetailURL: String?
-    var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
-    
+    var showDetail = ShowDetail()
+    var flagEnd = false
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -22,7 +22,7 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         if let showDetailURL = showDetailURL {
-            API.getShowDetails(from: showDetailURL, completion: reloadUI)
+            API.getShowDetails(from: showDetailURL, and: nil, completion: reloadUI)
         }
     }
     
@@ -38,8 +38,29 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == showDetail.titles.count-1 {
+            print("offset \(showDetail.nextOffset)\n indexPath \(indexPath)\n row \(indexPath.row)\n)")//\n titles \(showDetail.titles)
+            if let showDetailURL = showDetailURL {
+                if !flagEnd {
+                    if showDetail.nextOffset == -1 {
+                        flagEnd = true
+                    }
+                    API.getShowDetails(from: showDetailURL, and: showDetail.nextOffset, completion: reloadUI)
+                }
+            }
+        }
+    }
+    
     func reloadUI(showDetail: ShowDetail) -> Void {
-        self.showDetail = showDetail
+        self.showDetail.titles += showDetail.titles
+        self.showDetail.thumbnails += showDetail.thumbnails
+        self.showDetail.featureImageLand = showDetail.featureImageLand
+        self.showDetail.desc = showDetail.desc
+        self.showDetail.featureImg = showDetail.featureImg
+        self.showDetail.name = showDetail.name
+        self.showDetail.nextOffset = showDetail.nextOffset
+        
         DispatchQueue.main.async {
             self.imageView.downloaded(from: showDetail.featureImageLand)
             self.descriptionTextView.text = showDetail.desc

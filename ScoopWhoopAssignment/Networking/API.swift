@@ -36,9 +36,13 @@ class API {
     }
     
     // MARK: - Retrieve Show Details
-    static func getShowDetails (from url : String, completion: @escaping (ShowDetail) -> Void) {
-        var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
-        URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+    static func getShowDetails (from url : String, and offset: Int?, completion: @escaping (ShowDetail) -> Void) {
+        var showDetail = ShowDetail()
+        var urlWithOffset = url
+        if let offset = offset {
+            urlWithOffset = "\(url)&offset=\(offset)"
+        }
+        URLSession.shared.dataTask(with: URL(string: urlWithOffset)!) { data, response, error in
             var result: ShowDetailResponse?
             guard let data=data, error == nil else {
                 return
@@ -47,6 +51,9 @@ class API {
                 try result = JSONDecoder().decode(ShowDetailResponse.self, from: data)
             } catch {
                 print("didnt't work out to convert json to your structure")
+            }
+            if let nextOffset = result?.nextOffset {
+                showDetail.nextOffset = nextOffset
             }
             if let showDetailData = result?.showDetails {
                 showDetail.name = showDetailData.topicName

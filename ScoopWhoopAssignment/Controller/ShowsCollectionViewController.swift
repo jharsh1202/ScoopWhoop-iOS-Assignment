@@ -36,8 +36,7 @@ class ShowsCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! ShowDetailViewController
-        destVC.showDetailURL = showDetailURL
-    }
+        destVC.showDetailURL = showDetailURL    }
     
     func fetchAllShows(from url: String ) -> Void {
         API.getAllShows(from: url, completion: reloadUI)
