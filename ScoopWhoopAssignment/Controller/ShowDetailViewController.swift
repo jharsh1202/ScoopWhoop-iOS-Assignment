@@ -9,6 +9,7 @@ import UIKit
 
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,7 +18,7 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        API.getShowDetails(from: showDetailURL, collectionView: collectionView, imageView: imageView, descriptionTextView: descriptionTextView, viewController: self)
+        API.getShowDetails(from: showDetailURL, collectionView: collectionView, imageView: imageView, descriptionTextView: descriptionTextView, viewController: self, titleLabel: titleLabel)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

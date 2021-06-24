@@ -10,7 +10,7 @@ import UIKit
 class API {
     
     //mark Retrieve All Shows
-    static func getAllShows (from url : String, collectionView: UICollectionView ) {//-> [Show] {
+    static func getAllShows (from url : String, collectionView: UICollectionView) {
         var showsData = [Show]()
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowsResponse?
@@ -40,7 +40,7 @@ class API {
     
     
     // Retrieve Show Details
-    static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController ) {
+    static func getShowDetails (from url : String, collectionView: UICollectionView, imageView: UIImageView, descriptionTextView: UITextView, viewController: UIViewController, titleLabel: UILabel  ) {
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowDetailResponse?
             guard let data=data, error == nil else {
@@ -68,6 +68,7 @@ class API {
                 imageView.downloaded(from: showDetail.featureImageLand)
                 descriptionTextView.text = showDetail.desc
                 viewController.title = showDetail.name
+                titleLabel.text = showDetail.name
                 collectionView.reloadData()
             }
         }.resume()
