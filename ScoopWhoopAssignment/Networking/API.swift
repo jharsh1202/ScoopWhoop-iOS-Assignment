@@ -37,13 +37,11 @@ class API {
                 collectionView.reloadData()
             }
         }.resume()
-        //return showsData
     }
     
     
     // Retrieve Show Details
-    static func getShowDetails (from url : String, collectionView: UICollectionView ) -> ShowDetail {
-//        var showDetail = ShowDetail(name: "", featureImageLand: "", featureImg: "", titles: [""], thumbnails: [""], desc: "")
+    static func getShowDetails (from url : String, collectionView: UICollectionView ) {//}-> ShowDetail {
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             var result: ShowDetailResponse?
             guard let data=data, error == nil else {
@@ -68,12 +66,10 @@ class API {
                 }
             }
             DispatchQueue.main.async {
-                //showDetail = showDetail
-                print(showDetail)
                 collectionView.reloadData()
             }
         }.resume()
-        return showDetail
+        //return showDetail
     }
 }
 
