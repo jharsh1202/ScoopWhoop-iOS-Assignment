@@ -31,7 +31,7 @@ class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RelatedVideoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ShowDetailCollectionViewCell
         cell.videoLabel.preferredMaxLayoutWidth = self.view.frame.width/2 - 15
         cell.videoLabel.text = showDetail.titles[indexPath.row]
         cell.videoImageView.downloaded(from: showDetail.thumbnails[indexPath.row])
