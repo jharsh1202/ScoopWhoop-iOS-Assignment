@@ -8,7 +8,6 @@
 import UIKit
 
 class ShowDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
     var showDetailURL: String?
     var showDetail = ShowDetail()
     var flagEnd = false
@@ -77,4 +76,5 @@ extension ShowDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: self.view.frame.width/2 - 5, height: 300)
     }
 }
+
 

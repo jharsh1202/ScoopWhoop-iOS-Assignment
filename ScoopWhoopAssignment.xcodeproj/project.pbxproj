@@ -20,7 +20,18 @@
 		4EBD108326823EC7006B29D2 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD108226823EC7006B29D2 /* Show.swift */; };
 		4ED371C5268385B3003EA20D /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED371C4268385B3003EA20D /* ShowDetailViewController.swift */; };
 		4ED371CB268441A9003EA20D /* ShowDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED371CA268441A9003EA20D /* ShowDetailCollectionViewCell.swift */; };
+		934FDE82269CA498006649DD /* ScoopWhoopAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FDE81269CA498006649DD /* ScoopWhoopAssignmentTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		934FDE84269CA498006649DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E00499B26820CB4004F1639 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E0049A226820CB4004F1639;
+			remoteInfo = ScoopWhoopAssignment;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4E0049A326820CB4004F1639 /* ScoopWhoopAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopWhoopAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +49,20 @@
 		4EBD108226823EC7006B29D2 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		4ED371C4268385B3003EA20D /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
 		4ED371CA268441A9003EA20D /* ShowDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		934FDE7F269CA497006649DD /* ScoopWhoopAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopWhoopAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		934FDE81269CA498006649DD /* ScoopWhoopAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopWhoopAssignmentTests.swift; sourceTree = "<group>"; };
+		934FDE83269CA498006649DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E0049A026820CB4004F1639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		934FDE7C269CA497006649DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0049A526820CB4004F1639 /* ScoopWhoopAssignment */,
+				934FDE80269CA498006649DD /* ScoopWhoopAssignmentTests */,
 				4E0049A426820CB4004F1639 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0049A326820CB4004F1639 /* ScoopWhoopAssignment.app */,
+				934FDE7F269CA497006649DD /* ScoopWhoopAssignmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +143,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		934FDE80269CA498006649DD /* ScoopWhoopAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				934FDE81269CA498006649DD /* ScoopWhoopAssignmentTests.swift */,
+				934FDE83269CA498006649DD /* Info.plist */,
+			);
+			path = ScoopWhoopAssignmentTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +172,24 @@
 			productReference = 4E0049A326820CB4004F1639 /* ScoopWhoopAssignment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		934FDE7E269CA497006649DD /* ScoopWhoopAssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 934FDE88269CA498006649DD /* Build configuration list for PBXNativeTarget "ScoopWhoopAssignmentTests" */;
+			buildPhases = (
+				934FDE7B269CA497006649DD /* Sources */,
+				934FDE7C269CA497006649DD /* Frameworks */,
+				934FDE7D269CA497006649DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				934FDE85269CA498006649DD /* PBXTargetDependency */,
+			);
+			name = ScoopWhoopAssignmentTests;
+			productName = ScoopWhoopAssignmentTests;
+			productReference = 934FDE7F269CA497006649DD /* ScoopWhoopAssignmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +201,10 @@
 				TargetAttributes = {
 					4E0049A226820CB4004F1639 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					934FDE7E269CA497006649DD = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 4E0049A226820CB4004F1639;
 					};
 				};
 			};
@@ -168,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				4E0049A226820CB4004F1639 /* ScoopWhoopAssignment */,
+				934FDE7E269CA497006649DD /* ScoopWhoopAssignmentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +235,13 @@
 				4E0049B326820CB5004F1639 /* LaunchScreen.storyboard in Resources */,
 				4E0049B026820CB5004F1639 /* Assets.xcassets in Resources */,
 				4E0049AE26820CB4004F1639 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		934FDE7D269CA497006649DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +265,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		934FDE7B269CA497006649DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				934FDE82269CA498006649DD /* ScoopWhoopAssignmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		934FDE85269CA498006649DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E0049A226820CB4004F1639 /* ScoopWhoopAssignment */;
+			targetProxy = 934FDE84269CA498006649DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E0049AC26820CB4004F1639 /* Main.storyboard */ = {
@@ -379,6 +457,44 @@
 			};
 			name = Release;
 		};
+		934FDE86269CA498006649DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ScoopWhoopAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = harshit.jain.ScoopWhoopAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoopWhoopAssignment.app/ScoopWhoopAssignment";
+			};
+			name = Debug;
+		};
+		934FDE87269CA498006649DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ScoopWhoopAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = harshit.jain.ScoopWhoopAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoopWhoopAssignment.app/ScoopWhoopAssignment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +512,15 @@
 			buildConfigurations = (
 				4E0049B826820CB5004F1639 /* Debug */,
 				4E0049B926820CB5004F1639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		934FDE88269CA498006649DD /* Build configuration list for PBXNativeTarget "ScoopWhoopAssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				934FDE86269CA498006649DD /* Debug */,
+				934FDE87269CA498006649DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
