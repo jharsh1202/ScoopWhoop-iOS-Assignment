@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.com/jharsh1202/ScoopWhoop-iOS-Assignment.svg?branch=main)](https://travis-ci.com/jharsh1202/)
+
 # ScoopWhoopAssignment
 
 
